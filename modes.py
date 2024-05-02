@@ -34,10 +34,8 @@ def rectangle_face(frame, bbox):
 
 def cross_face(frame, bbox):
     x, y, w, h = bbox
-    cv.line(frame, (x, y+round(h / 2)),
-            (x+w, y+round(h / 2)), (255, 0, 255), 2)
-    cv.line(frame, (x+round(w / 2), y),
-            (x+round(w / 2), y+h), (255, 0, 255), 2)
+    cv.line(frame, (x, y+round(h / 2)),(x+w, y+round(h / 2)), (255, 0, 255), 2)
+    cv.line(frame, (x+round(w / 2), y),(x+round(w / 2), y+h), (255, 0, 255), 2)
     return frame
 
 

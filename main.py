@@ -38,8 +38,7 @@ def run(mode: str = "none"):
                 for detection in results.detections:
                     bbox = detection.location_data.relative_bounding_box
                     ih, iw, _ = frame.shape  # Image height, image width for scaling
-                    frame = modes[mode](frame, (int(
-                        bbox.xmin * iw), int(bbox.ymin * ih), int(bbox.width * iw), int(bbox.height * ih)))
+                    frame = modes[mode](frame, (int(bbox.xmin * iw), int(bbox.ymin * ih), int(bbox.width * iw), int(bbox.height * ih)))
 
             cv.imshow(f"Frame {args.mode}", frame)
             if cv.waitKey(1) & 0xFF == ord('q'):
